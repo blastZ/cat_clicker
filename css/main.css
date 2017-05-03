@@ -1,0 +1,76 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 800px;
+}
+
+label {
+    color: white;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    margin-top: 30px;
+}
+
+div {
+    text-align: center;
+}
+
+p {
+    font-size: 4em;
+    color: black;
+}
+
+ul {
+    height: 100%;
+    float: left;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    list-style: none;
+    margin: 0;
+    padding: 20px 15px 0 15px;
+    background: black;
+    color: white;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    width: 8%;
+    text-align: center;
+}
+
+li:hover {
+    color: #8dfcff;
+    cursor: pointer;
+}
+
+li:visited {
+    color: yellow;
+}
+
+#admin {
+    background-color: black;
+    color: white;
+    position: fixed;
+    right: 0;
+    top: 0;
+    font-size: 1.2em;
+    padding: 10px;
+}
+
+#adminPanel {
+    background-color: black;
+    width: 8%;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    display: none;
+}
+
