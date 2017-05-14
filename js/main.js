@@ -47,22 +47,40 @@ var view = {
 
         $('#save').click(function(){
             var new_cat_name = $('#new_cat_name').val();
+            var new_cat_url = $('#new_cat_url').val();
+            var new_click_times = $('#new_click_times').val();
             if(new_cat_name !== '') {
                 cats[currentOrder].name = new_cat_name;
                 $('#cat_name').html(cats[currentOrder].name);
             }
-            $('#adminPanel').hide(1000);
+            if(new_cat_url !== '') {
+                cats[currentOrder].sprite = new_cat_url;
+                $('#cat_image').attr('src', cats[currentOrder].sprite);
+            }
+            if(new_click_times !== '') {
+                cats[currentOrder].clickTimes = new_click_times;
+                $('#cat_count').html(cats[currentOrder].clickTimes);
+            }
+            view.clearAdminPanel();
+            $('#adminPanel').hide(500);
         });
 
         $('#cancel').click(function(){
-           $('#adminPanel').hide(1000);
+            view.clearAdminPanel();
+           $('#adminPanel').hide(500);
         });
     },
     initButton: function() {
       $('#admin').click(function() {
-          $('#adminPanel').show(1000);
+          $('#adminPanel').show(500);
       })
+    },
+    clearAdminPanel: function() {
+        $('#new_cat_name')[0].value = '';
+        $('#new_click_times')[0].value = '';
+        $('#new_cat_url')[0].value = '';
     }
+
 };
 
 octopus.initAll();

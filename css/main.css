@@ -72,5 +72,6 @@ li:visited {
     right: 0;
     top: 0;
     display: none;
+    will-change: transform;
 }
 
