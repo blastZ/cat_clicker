@@ -4,25 +4,29 @@
     <meta charset="UTF-8">
     <title>Cat Clicker</title>
     <link rel="stylesheet" href="css/main.css">
-    <script src="js/jquery-3.2.0.min.js"></script>
 </head>
 <body>
-    <ul id="cat_list"></ul>
-    <div>
-        <p id="cat_name"></p>
-        <img src="" id="cat_image">
-        <p id="cat_count"></p>
+    <ul id="cat_list" data-bind="foreach: cats">
+        <li data-bind="text: $data.name, click: $parent.setCat"></li>
+    </ul>
+    <div id="main_section" data-bind="with: currentCat">
+        <p id="cat_name" data-bind="text: name"></p>
+        <p id="cat_level" data-bind="text: level"></p>
+        <img src="" id="cat_image" data-bind="click: $parent.incrementCounter, attr: {src: imgSrc}">
+        <p id="cat_count" data-bind="text: clickCounter"></p>
     </div>
-    <button id="admin">Admin</button>
+    <button id="admin" data-bind="click: clickAdminButton">Admin</button>
     <div id="adminPanel">
         <form>
             <label for="new_cat_name">Cat Name: </label><input id="new_cat_name" type="text">
             <label for="new_cat_url">Cat URL: </label><input id="new_cat_url" type="text">
             <label for="new_click_times">Click Times: </label><input id="new_click_times" type="number">
         </form>
-        <button id="save">Save</button>
-        <button id="cancel">Cancel</button>
+        <button id="save" data-bind="click: clickSaveButton">Save</button>
+        <button id="cancel" data-bind="click: clickCancelButton">Cancel</button>
     </div>
-    <script src="js/main.js"></script>
+    <script src="js/lib/jquery-3.2.0.min.js"></script>
+    <script src="js/lib/knockout-3.4.2.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
